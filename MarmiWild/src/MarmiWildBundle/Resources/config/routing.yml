@@ -1,0 +1,3 @@
+marmi_wild_homepage:
+    path:     /
+    defaults: { _controller: MarmiWildBundle:Default:index }
