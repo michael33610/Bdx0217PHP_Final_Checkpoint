@@ -1,0 +1,27 @@
+{% extends "@MarmiWild/layout.html.twig" %}
+
+{% block body %}
+    <div style="height: 200px"></div>
+
+    <h1>Recette creation</h1>
+
+        {{ form_widget(form) }}
+
+
+        <input type="submit" value="Create" />
+   <!--
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s12">
+                <p>{{ form_widget(form.nomRecette) }}</p>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <ul>
+        <li>
+            <a href="{{ path('recette_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

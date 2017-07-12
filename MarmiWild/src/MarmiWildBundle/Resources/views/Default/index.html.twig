@@ -1,9 +1,13 @@
-{# src/MarmiWildBundle/Resources/views/Default/index.html.twig #}
+{% extends "@MarmiWild/layout.html.twig" %}
 
-<html>
-<body>
-Hello World!
-</body>
-</html>
+{% block body %}
+    <div style="height: 300px"></div>
+    <ul>
+        <li><a href="{{ path('recette_new') }}">Creation recette</a></li>
+        <li><a href="{{ path('ingredient_new') }}">Creation ingredient</a></li>
+    </ul>
+
+
+{% endblock %}
 
 

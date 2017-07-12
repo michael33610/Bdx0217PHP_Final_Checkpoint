@@ -97,45 +97,5 @@ class Ingredient
     {
         return $this->quantite;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->recette = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add recette
-     *
-     * @param \MarmiWildBundle\Entity\Recette $recette
-     *
-     * @return Ingredient
-     */
-    public function addRecette(\MarmiWildBundle\Entity\Recette $recette)
-    {
-        $this->recette[] = $recette;
-
-        return $this;
-    }
-
-    /**
-     * Remove recette
-     *
-     * @param \MarmiWildBundle\Entity\Recette $recette
-     */
-    public function removeRecette(\MarmiWildBundle\Entity\Recette $recette)
-    {
-        $this->recette->removeElement($recette);
-    }
-
-    /**
-     * Get recette
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getRecette()
-    {
-        return $this->recette;
-    }
 }
+

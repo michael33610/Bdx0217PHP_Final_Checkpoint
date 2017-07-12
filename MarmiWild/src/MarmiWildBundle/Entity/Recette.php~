@@ -38,12 +38,12 @@ class Recette
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string",length=255)
+     * @ORM\Column(name="image", type="text")
      */
     private $image;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Ingredient", mappedBy="recettes", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Ingredient", inversedBy="recettes", cascade={"persist"})
      */
     private $ingredient;
 
@@ -104,69 +104,5 @@ class Recette
     {
         return $this->description;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->ingredient = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Recette
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Add ingredient
-     *
-     * @param \MarmiWildBundle\Entity\Ingredient $ingredient
-     *
-     * @return Recette
-     */
-    public function addIngredient(\MarmiWildBundle\Entity\Ingredient $ingredient)
-    {
-        $this->ingredient[] = $ingredient;
-
-        return $this;
-    }
-
-    /**
-     * Remove ingredient
-     *
-     * @param \MarmiWildBundle\Entity\Ingredient $ingredient
-     */
-    public function removeIngredient(\MarmiWildBundle\Entity\Ingredient $ingredient)
-    {
-        $this->ingredient->removeElement($ingredient);
-    }
-
-    /**
-     * Get ingredient
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getIngredient()
-    {
-        return $this->ingredient;
-    }
 }
+
